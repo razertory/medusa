@@ -5,6 +5,7 @@ import {
   FilterQuery as InternalFilterQuery,
   FilterQuery,
   FindOptions,
+  UpsertConfig,
 } from "./index"
 
 /**
@@ -69,7 +70,11 @@ export interface RepositoryService<T = any> extends BaseRepositoryService<T> {
     context?: Context
   ): Promise<[T[], Record<string, unknown[]>]>
 
-  upsert(data: any[], context?: Context): Promise<T[]>
+  upsert(
+    data: any[],
+    upsertConfig?: UpsertConfig<T>,
+    context?: Context
+  ): Promise<T[]>
 }
 
 export interface TreeRepositoryService<T = any>
