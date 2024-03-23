@@ -22,6 +22,8 @@ export enum UserRoles {
    * The user is a developer.
    */
   DEVELOPER = "developer",
+
+  TRANSFER = "transfer",
 }
 
 @Entity()
